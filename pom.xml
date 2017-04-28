@@ -44,16 +44,12 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.13.4</version>
 		<configuration>
-   			<dockerHost>tcp://192.168.99.100:2376</dockerHost>
-   			<certPath>/Users/shaines/.docker/machine/machines/default</certPath>
-   			<useColor>true</useColor>
   		   <images>
     			<image>
       				<name>lygado/tomcat-with-my-app:0.1</name>
       				<alias>service</alias>
 				<build>
 					<from>tomcat</from>
-					<!--
 					<ports>
 						<port>8080</port>
 					</ports>
@@ -63,7 +59,6 @@
 						<args>start</args>
 					   </exec>
 					</entryPoint>
-					-->
 					<assembly>	
 					   <mode>dir</mode>
 					   <basedir>/usr/local/tomcat/webapps</basedir>
