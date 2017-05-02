@@ -184,7 +184,7 @@
                 <alias>${project.artifactId}</alias>
                 <name>dluasri7511313.sapient.com/${project.artifactId}</name>
                 <build>
-                  <from>dluasri7511313.sapient.com/base:v16</from>
+                  <from>tomcat</from>
                   <tags>
                     <tag>latest</tag>
                     <tag>${git.commit.id}</tag>
