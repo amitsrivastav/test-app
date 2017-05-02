@@ -109,7 +109,6 @@
   </build>
       <profiles>
    <profile>
-      <id>docker</id>
       <build>
       <pluginManagement>
       <plugins>
