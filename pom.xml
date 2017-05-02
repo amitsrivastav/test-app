@@ -178,7 +178,7 @@
             <logDate>default</logDate>
             <autoPull>true</autoPull>
             <dockerHost>unix:///var/run/docker.sock</dockerHost>
-            <sourceDirectory>../../docker</sourceDirectory>
+            <sourceDirectory>../docker</sourceDirectory>
             <images>
               <image>
                 <alias>${project.artifactId}</alias>
