@@ -67,26 +67,26 @@
       </dependency>
   </dependencies>
     <build>
-        <finalName>helloworld</finalName>
-        <plugins>
-           <plugin>
-                <groupId>pl.project13.maven</groupId>
-                <artifactId>git-commit-id-plugin</artifactId>
-                <version>2.1.12</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>revision</goal>
-                         </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                  <dotGitDirectory>${basedir}/../../../.git</dotGitDirectory>
-                  <generateGitPropertiesFile>true</generateGitPropertiesFile>
-                  <generateGitPropertiesFilename>conf/git.properties</generateGitPropertiesFilename>
-                </configuration>
-            </plugin>
-            <plugin>
+     <finalName>helloworld</finalName>
+     <plugins>
+        <plugin>
+          <groupId>pl.project13.maven</groupId>
+          <artifactId>git-commit-id-plugin</artifactId>
+          <version>2.1.12</version>
+          <executions>
+            <execution>
+              <goals>
+              <goal>revision</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <dotGitDirectory>${basedir}/../../../.git</dotGitDirectory>
+            <generateGitPropertiesFile>true</generateGitPropertiesFile>
+            <generateGitPropertiesFilename>conf/git.properties</generateGitPropertiesFilename>
+          </configuration>
+       </plugin>
+       <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.0.2</version>
@@ -105,7 +105,8 @@
                     <releaseProfiles>releases</releaseProfiles>
                 </configuration>
             </plugin>
-            </build>
+   </plugins>
+  </build>
       <profiles>
    <profile>
       <id>docker</id>
