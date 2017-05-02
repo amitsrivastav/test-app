@@ -4,7 +4,6 @@
 
     <groupId>com.geekcap.vmturbo</groupId>
     <artifactId>hello-world-servlet-example</artifactId>
-    <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>hello-world-servlet-example Maven Webapp</name>
     <packaging>pom</packaging>
