@@ -20,7 +20,7 @@
     </distributionManagement>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <nexus.url>https://dluasri7511313.sapient.com/</samihub.nexus.url>
+        <nexus.url>https://dluasri7511313.sapient.com/</nexus.url>
         <nexus.central.url>https://dluasri7511313.sapient.com/repository/maven-central</nexus.central.url>
         <nexus.releases.url>https://dluasri7511313.sapient.com/repository/maven-releasese</nexus.releases.url>
         <nexus.snapshots.url>https://dluasri7511313.sapient.com/repository/maven-snapshots</nexus.snapshots.url>
