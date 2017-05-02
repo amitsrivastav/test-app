@@ -108,11 +108,51 @@
    </plugins>
   </build>
       <profiles>
-   <profile>
+        <profile>
+        <id>docker</id>
       <build>
       <pluginManagement>
       <plugins>
-  <plugin>
+         <plugin>
+        <groupId>org.jolokia</groupId>
+        <artifactId>docker-maven-plugin</artifactId>
+        <version>0.13.1</version>
+        <configuration>
+          <logDate>default</logDate>
+          <autoPull>true</autoPull>
+    <dockerHost>unix:///var/run/docker.sock</dockerHost>
+    <sourceDirectory>../../docker</sourceDirectory>
+          <images>
+            <image>
+              <alias>${project.artifactId}</alias>
+              <name>dluasri7511313.sapient.com/${project.artifactId}</name>
+              <build>
+    <from>dluasri7511313.sapient.com/base:v16</from>
+                <tags>
+                  <tag>latest</tag>
+      <tag>${git.commit.id}</tag>
+          </tags>
+          <cmd><exec><arg>/bin/bash</arg></exec></cmd>
+                <assembly>
+                  <basedir>/opt/sami</basedir>
+                  <descriptor>assembly.xml</descriptor>
+                </assembly>
+              </build>
+            </image>
+          </images>
+        </configuration>
+        <executions>
+          <execution>
+            <id>build</id>
+            <phase>package</phase>
+            <goals>
+              <goal>build</goal>
+        <goal>push</goal>
+            </goals>
+          </execution>
+        </executions>
+       </plugin>
+       <plugin>
           <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>
           <version>1.6</version>
@@ -173,45 +213,7 @@
           </execution>
         </executions>
        </plugin>
-       <plugin>
-        <groupId>org.jolokia</groupId>
-        <artifactId>docker-maven-plugin</artifactId>
-        <version>0.13.1</version>
-        <configuration>
-          <logDate>default</logDate>
-          <autoPull>true</autoPull>
-    <dockerHost>unix:///var/run/docker.sock</dockerHost>
-    <sourceDirectory>../../docker</sourceDirectory>
-          <images>
-            <image>
-              <alias>${project.artifactId}</alias>
-              <name>dluasri7511313.sapient.com/${project.artifactId}</name>
-              <build>
-    <from>dluasri7511313.sapient.com/base:v16</from>
-                <tags>
-                  <tag>latest</tag>
-      <tag>${git.commit.id}</tag>
-          </tags>
-          <cmd><exec><arg>/bin/bash</arg></exec></cmd>
-                <assembly>
-                  <basedir>/opt/sami</basedir>
-                  <descriptor>assembly.xml</descriptor>
-                </assembly>
-              </build>
-            </image>
-          </images>
-        </configuration>
-        <executions>
-          <execution>
-            <id>build</id>
-            <phase>package</phase>
-            <goals>
-              <goal>build</goal>
-        <goal>push</goal>
-            </goals>
-          </execution>
-        </executions>
-       </plugin>
+      
       </plugins>
      </pluginManagement>
     </build>
